@@ -54,6 +54,10 @@ src/data/bilibili-data.json
 # Lighthouse CI
 .lighthouseci/
 
+# Local-only article administration (never deploy or commit)
+/local-admin/
+/scripts/admin-vite-plugin.mjs
+
 # Live2D editor source files
 *.psd
 *.psd~

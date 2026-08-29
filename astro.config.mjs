@@ -1,4 +1,6 @@
 import { unified } from "@astrojs/markdown-remark";
+import fs from "node:fs";
+import { fileURLToPath } from "node:url";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import svelte, { vitePreprocess } from "@astrojs/svelte";
@@ -50,6 +52,19 @@ import { remarkWikiLink } from "./src/plugins/remark-wiki-link.mjs";
 import { resolveFontMode } from "./src/utils/fontMode.ts";
 
 const customFontsEnabled = resolveFontMode(siteConfig) === "custom";
+
+// The local article manager is intentionally loaded only when its ignored
+// source file exists and Astro is running in development mode.
+const localAdminPlugins = [];
+const localAdminPluginPath = fileURLToPath(
+	new URL("./scripts/admin-vite-plugin.mjs", import.meta.url),
+);
+if (process.env.NODE_ENV !== "production" && fs.existsSync(localAdminPluginPath)) {
+	const { default: createLocalAdminPlugin } = await import(
+		"./scripts/admin-vite-plugin.mjs"
+	);
+	localAdminPlugins.push(createLocalAdminPlugin());
+}
 
 // https://astro.build/config
 export default defineConfig({
@@ -319,7 +334,7 @@ export default defineConfig({
 		}),
 	},
 	vite: {
-		plugins: [tailwindcss()],
+		plugins: [tailwindcss(), ...localAdminPlugins],
 		// 开发环境预打包优化：将常用依赖提前编译，避免首次页面加载时 on-demand 编译导致 8s+ 的等待
 		optimizeDeps: {
 			include: [
