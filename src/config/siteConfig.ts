@@ -4,8 +4,8 @@ import type { SiteConfig } from "../types/config";
 const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 
 export const siteConfig: SiteConfig = {
-	title: "Mizuki",
-	subtitle: "记录生活与技术的个人博客",
+	title: "暮日",
+	subtitle: "个人博客",
 	siteURL: "https://01.klt.ccwu.cc/", // 请替换为你的站点URL，以斜杠结尾
 	siteStartDate: "2026-08-29", // 站点开始运行日期，用于站点统计组件计算运行天数
 	timeZone: "Asia/Shanghai", // 文章日期使用的 IANA 时区，可改为 Asia/Tokyo、Europe/Berlin 等
@@ -26,7 +26,7 @@ export const siteConfig: SiteConfig = {
 		skills: true, // 技能页面开关
 		timeline: true, // 时间线页面开关
 		albums: true, // 相册页面开关
-		devices: true, // 设备页面开关
+		devices:false, // 设备页面开关
 		aiTools: true, // AI 工具页面开关
 	},
 
@@ -35,7 +35,7 @@ export const siteConfig: SiteConfig = {
 		// 显示模式："text-icon" 显示图标+文本，"logo" 仅显示Logo
 		mode: "text-icon",
 		// 顶栏标题文本
-		text: "klt的博客",
+		text: "暮日的博客",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.webp
 		icon: "assets/home/home.webp",
 		// 网站Logo图片路径
@@ -162,7 +162,7 @@ export const siteConfig: SiteConfig = {
 
 		homeText: {
 			enable: true,
-			title: "我的小屋",
+			title: "暮日的小屋",
 			switchable: true,
 
 			subtitle: [
@@ -211,7 +211,7 @@ export const siteConfig: SiteConfig = {
 		// }
 	],
 
-	showLastModified: true, // 控制"上次编辑"卡片显示的开关
+	showLastModified: false, // 控制"上次编辑"卡片显示的开关
 	pageProgressBar: {
 		enable: true, // 启用页面顶部进度条
 		height: 3, // 进度条高度 3px
