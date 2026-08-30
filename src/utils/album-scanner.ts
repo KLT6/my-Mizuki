@@ -85,19 +85,26 @@ async function processAlbumFolder(
 		);
 	} else {
 		// 本地模式：检查本地文件
-		let coverPath = path.join(folderPath, "cover.webp");
-		const hasWebpCover = fs.existsSync(coverPath);
-		if (!hasWebpCover) {
-			coverPath = path.join(folderPath, "cover.jpg");
-			if (!fs.existsSync(coverPath)) {
-				console.warn(`相册 ${folderName} 缺少 cover 文件`);
-				return null;
+		const imageNames = fs
+			.readdirSync(folderPath)
+			.filter((file) => /\.(?:jpg|jpeg|png|gif|webp|avif|bmp|tiff|tif|svg)$/iu.test(file));
+		const conventionalCover = imageNames.find((file) => /^cover\.(?:jpg|jpeg|png|gif|webp|avif|bmp|tiff|tif|svg)$/iu.test(file));
+		let coverPath = conventionalCover ? path.join(folderPath, conventionalCover) : "";
+		if (!coverPath) {
+				// If no conventional cover exists, use the first local photo as cover.
+				// This keeps albums created by the local admin usable without requiring
+				// users to rename one of their photos to cover.jpg.
+				const firstPhoto = imageNames.find((file) => !/^cover\./iu.test(file));
+				if (!firstPhoto) {
+					console.warn(`相册 ${folderName} 暂无本地图片，将使用默认封面`);
+					coverPath = "";
+				}
+				if (firstPhoto) coverPath = path.join(folderPath, firstPhoto);
 			}
-		}
 
-		cover = hasWebpCover
-			? `/images/albums/${folderName}/cover.webp`
-			: `/images/albums/${folderName}/cover.jpg`;
+		cover = coverPath
+			? `/images/albums/${folderName}/${path.basename(coverPath)}`
+			: "";
 		photos = scanPhotos(folderPath, folderName);
 	}
 
@@ -143,8 +150,7 @@ function scanPhotos(folderPath: string, albumId: string): Photo[] {
 		const ext = path.extname(file).toLowerCase();
 		return (
 			imageExtensions.includes(ext) &&
-			file !== "cover.jpg" &&
-			file !== "cover.webp"
+			!/^cover\./iu.test(file)
 		);
 	});
 

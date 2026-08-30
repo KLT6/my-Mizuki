@@ -20,83 +20,143 @@ export interface Project {
 }
 
 export const projectsData: Project[] = [
-	{
-		id: "mizuki",
-		title: "Mizuki",
-		description:
-			"A next-gen Material Design 3 blog theme built with Astro, featuring i18n, dark mode, and responsive design.",
-		image: "/assets/projects/mizuki.webp",
-		category: "web",
-		techStack: ["Astro", "TypeScript", "Tailwind CSS", "Svelte"],
-		status: "completed",
-		sourceCode: "https://github.com/LyraVoid/Mizuki",
-		visitUrl: "https://mizuki.mysqil.com",
-		startDate: "2024-01-01",
-		endDate: "2024-06-01",
-		featured: true,
-		tags: ["Blog", "Theme", "Open Source"],
-	},
-	{
-		id: "folkpatch",
-		title: "FolkPatch",
-		description:
-			"A kernel-level ROOT solution based on KernelPatch, with polished UI, APM module system, and KPM kernel module support.",
-		image: "/assets/projects/folkpatch.webp",
-		category: "mobile",
-		techStack: ["Kotlin", "Rust", "C++", "Java"],
-		status: "in-progress",
-		sourceCode: "https://github.com/LyraVoid/FolkPatch",
-		visitUrl: "https://fp.mysqil.com",
-		startDate: "2024-03-01",
-		featured: true,
-		tags: ["Android", "Root", "Kernel"],
-	},
-	{
-		id: "folktool",
-		title: "FolkTool",
-		description:
-			"A fast ROOT flashing tool for FolkPatch with a graphical interface and automated operations, simplifying the complex flashing process.",
-		image: "",
-		category: "desktop",
-		techStack: ["Flutter", "Dart", "C++", "CMake"],
-		status: "completed",
-		sourceCode: "https://github.com/LyraVoid/FolkTool",
-		startDate: "2026-02-01",
-		endDate: "2026-02-28",
-		tags: ["Android", "Tool", "Desktop"],
-		showImage: false,
-	},
-	{
-		id: "folkadb",
-		title: "FolkADB",
-		description:
-			"A portable ADB/Fastboot tool written in C, featuring interactive CLI, Tab completion, drag-and-drop module installation, and Shizuku activation.",
-		image: "",
-		category: "desktop",
-		techStack: ["C"],
-		status: "completed",
-		sourceCode: "https://github.com/LyraVoid/FolkADB",
-		startDate: "2025-06-01",
-		endDate: "2026-01-01",
-		tags: ["Android", "ADB", "CLI"],
-		showImage: false,
-	},
-	{
-		id: "folksplash",
-		title: "FolkSplash",
-		description:
-			"A web-based splash.img visualizer for OPPO/Realme/OnePlus devices, supporting unpack, preview, replace, and repack.",
-		image: "",
-		category: "web",
-		techStack: ["React", "TypeScript", "Vite", "Material-UI", "Zustand"],
-		status: "completed",
-		sourceCode: "https://github.com/LyraVoid/FolkSplash",
-		visitUrl: "https://splash.mysqil.com",
-		startDate: "2025-09-01",
-		endDate: "2025-10-01",
-		tags: ["Android", "Tool", "Frontend"],
-		showImage: false,
-	},
+  {
+    "id": "mizuki",
+    "title": "Mizuki",
+    "description": "A next-gen Material Design 3 blog theme built with Astro, featuring i18n, dark mode, and responsive design.",
+    "image": "/assets/projects/mizuki.webp",
+    "category": "web",
+    "techStack": [
+      "Astro",
+      "TypeScript",
+      "Tailwind CSS",
+      "Svelte"
+    ],
+    "status": "completed",
+    "sourceCode": "https://github.com/LyraVoid/Mizuki",
+    "visitUrl": "https://mizuki.mysqil.com",
+    "startDate": "2024-01-01",
+    "endDate": "2024-06-01",
+    "featured": true,
+    "tags": [
+      "Blog",
+      "Theme",
+      "Open Source"
+    ]
+  },
+  {
+    "id": "folkpatch",
+    "title": "FolkPatch",
+    "description": "A kernel-level ROOT solution based on KernelPatch, with polished UI, APM module system, and KPM kernel module support.",
+    "image": "/assets/projects/folkpatch.webp",
+    "category": "mobile",
+    "techStack": [
+      "Kotlin",
+      "Rust",
+      "C++",
+      "Java"
+    ],
+    "status": "in-progress",
+    "sourceCode": "https://github.com/LyraVoid/FolkPatch",
+    "visitUrl": "https://fp.mysqil.com",
+    "startDate": "2024-03-01",
+    "featured": true,
+    "tags": [
+      "Android",
+      "Root",
+      "Kernel"
+    ]
+  },
+  {
+    "id": "folktool",
+    "title": "FolkTool",
+    "description": "A fast ROOT flashing tool for FolkPatch with a graphical interface and automated operations, simplifying the complex flashing process.",
+    "image": "",
+    "category": "desktop",
+    "techStack": [
+      "Flutter",
+      "Dart",
+      "C++",
+      "CMake"
+    ],
+    "status": "completed",
+    "sourceCode": "https://github.com/LyraVoid/FolkTool",
+    "startDate": "2026-02-01",
+    "endDate": "2026-02-28",
+    "tags": [
+      "Android",
+      "Tool",
+      "Desktop"
+    ],
+    "showImage": false
+  },
+  {
+    "id": "folkadb",
+    "title": "FolkADB",
+    "description": "A portable ADB/Fastboot tool written in C, featuring interactive CLI, Tab completion, drag-and-drop module installation, and Shizuku activation.",
+    "image": "",
+    "category": "desktop",
+    "techStack": [
+      "C"
+    ],
+    "status": "completed",
+    "sourceCode": "https://github.com/LyraVoid/FolkADB",
+    "startDate": "2025-06-01",
+    "endDate": "2026-01-01",
+    "tags": [
+      "Android",
+      "ADB",
+      "CLI"
+    ],
+    "showImage": false
+  },
+  {
+    "id": "folksplash",
+    "title": "FolkSplash",
+    "description": "A web-based splash.img visualizer for OPPO/Realme/OnePlus devices, supporting unpack, preview, replace, and repack.",
+    "image": "",
+    "category": "web",
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Material-UI",
+      "Zustand"
+    ],
+    "status": "completed",
+    "sourceCode": "https://github.com/LyraVoid/FolkSplash",
+    "visitUrl": "https://splash.mysqil.com",
+    "startDate": "2025-09-01",
+    "endDate": "2025-10-01",
+    "tags": [
+      "Android",
+      "Tool",
+      "Frontend"
+    ],
+    "showImage": false
+  },
+  {
+    "id": "my-mizuki",
+    "title": "my-mizuki",
+    "description": "一个轻量并且复杂的个人博客！",
+    "category": "web",
+    "status": "completed",
+    "startDate": "2026-08-30",
+    "techStack": [
+      "Astro",
+      "TypeScript",
+      "Tailwind CSS",
+      "Svelte"
+    ],
+    "tags": [
+      "开源，博客"
+    ],
+    "image": "https://kong-springboot1.oss-cn-beijing.aliyuncs.com/21233815-c0e4-4a9c-b6a5-8995717d913e.jpg",
+    "visitUrl": "https://01.klt.ccwu.cc/",
+    "sourceCode": "",
+    "featured": false,
+    "showImage": true
+  }
 ];
 
 // Get project statistics
