@@ -130,10 +130,26 @@ export const navBarConfig: NavBarConfig = {
 	links: [
 		// 预设链接：首页
 		LinkPreset.Home,
-		// 预设链接：归档
-		LinkPreset.Archive,
+		// 预设链接：日记
+		LinkPreset.Diary,
+		// 预设链接：相册
+		LinkPreset.Albums,
+		// 预设链接：项目
+		LinkPreset.Projects,
 
-		// 自定义一级下拉菜单示例：外部链接集合
+		// 自定义一级下拉菜单：我的（归档、技能、时间线）
+		{
+			name: "我的",
+			url: "/content/",
+			icon: "material-symbols:person",
+			children: [
+				LinkPreset.Archive,
+				LinkPreset.Skills,
+				LinkPreset.Timeline,
+			],
+		},
+
+		// 自定义一级下拉菜单：链接（外部链接集合）
 		{
 			name: "链接",
 			url: "/links/",
@@ -156,80 +172,6 @@ export const navBarConfig: NavBarConfig = {
 					url: "https://gitee.com/chuanmuK",
 					external: true,
 					icon: "mdi:git",
-				},
-			],
-		},
-
-		// 自定义一级下拉菜单示例：个人内容页面
-		{
-			name: "我的",
-			url: "/content/",
-			icon: "material-symbols:person",
-			children: [
-				{
-					name: "番剧",
-					url: "/anime/",
-					icon: "material-symbols:movie",
-				},
-				{
-					name: "日记",
-					url: "/diary/",
-					icon: "material-symbols:book",
-				},
-				{
-					name: "相册",
-					url: "/albums/",
-					icon: "material-symbols:photo-library",
-				},
-				{
-					name: "设备",
-					url: "/devices/",
-					icon: "material-symbols:devices",
-					external: false, // 内部链接，当前页导航
-				},
-			],
-		},
-
-		// 自定义一级下拉菜单示例：关于相关
-		{
-			name: "关于",
-			url: "/content/",
-			icon: "material-symbols:info",
-			children: [
-				{
-					name: "关于本站",
-					url: "/about/",
-					icon: "material-symbols:person",
-				},
-				{
-					name: "友链",
-					url: "/friends/",
-					icon: "material-symbols:group",
-				},
-			],
-		},
-
-		// 自定义一级下拉菜单示例：其他页面
-		{
-			name: "其他",
-			url: "#", // "#" 作为占位 URL，点击不会跳转
-			icon: "material-symbols:more-horiz",
-			children: [
-				{
-					name: "项目",
-					url: "/projects/",
-					icon: "material-symbols:work",
-				},
-				{
-					name: "技能",
-					url: "/skills/",
-					icon: "material-symbols:psychology",
-				},
-				LinkPreset.AITools,
-				{
-					name: "时间线",
-					url: "/timeline/",
-					icon: "material-symbols:timeline",
 				},
 			],
 		},
