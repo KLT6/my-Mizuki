@@ -35,12 +35,8 @@ jobs:
 
       - name: Build site
         run: pnpm run build
-        env:
-          # ENABLE_CONTENT_SYNC: true
-          # CONTENT_REPO_URL: ${{ secrets.CONTENT_REPO_URL }}
-          # USE_SUBMODULE: true
 
-      # 保留原来的 GitHub Pages 部署
+      # 部署到 GitHub Pages 分支
       - name: Deploy to pages branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
