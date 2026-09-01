@@ -25,15 +25,14 @@ const diaryData: DiaryItem[] = [
   {
     "id": 1788063782764,
     "content": "今日清空万里，\n无事发生。",
-    "date": "2026-08-19T12:22:00.000Z",
+    "date": "2026-08-19T04:22:00.000Z",
     "location": "淮北市",
     "mood": "一般般",
     "tags": [
       "生活，随笔"
     ],
     "images": [
-      "https://kong-springboot1.oss-cn-beijing.aliyuncs.com/21233815-c0e4-4a9c-b6a5-8995717d913e.jpg",
-      "https://picsum.photos/800/600?random=10"
+      "https://kong-springboot1.oss-cn-beijing.aliyuncs.com/21233815-c0e4-4a9c-b6a5-8995717d913e.jpg"
     ]
   }
 ];
